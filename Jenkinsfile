@@ -2,7 +2,6 @@ pipeline {
   agent { dockerfile true }
   stages {
     stage("verify tooling") {
-            }
       steps {
         sh '''
           docker version
@@ -29,6 +28,7 @@ pipeline {
         sh 'curl http://localhost:3000/param?query=demo | jq'
       }
     }
+	}
   post {
     always {
       sh 'docker compose down --remove-orphans -v'
