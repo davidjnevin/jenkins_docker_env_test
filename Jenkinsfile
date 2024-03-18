@@ -1,7 +1,8 @@
 pipeline {
-  agent none
+  agent { dockerfile true }
   stages {
     stage("verify tooling") {
+            }
       steps {
         sh '''
           docker version
